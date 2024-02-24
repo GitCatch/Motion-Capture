@@ -19,11 +19,13 @@ def save_pose_data_to_file(landmarks, image):
     for idx, landmark in enumerate(landmarks.landmark):
         # Get the coordinates of each landmark
         h, w, c = image.shape
-        cx, cy = int(landmark.x * w), int(landmark.y * h)
+        cx, cy, cz = int(landmark.x * w), int(landmark.y * h), int(landmark.z * w)
 
         # Append landmark data to the dictionary
         pose_data['person']['landmarks'].append({
-            f'Landmark {idx}': {'x': cx, 'y': cy, 'timestamp': str(datetime.now())}
+            f'Landmark {idx}': {'x': cx, 'y': cy,
+                                'z' : cz,
+                                 'timestamp': str(datetime.now())}
         })
 
     # Save the data to a JSON file

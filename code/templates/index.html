@@ -1,8 +1,52 @@
 {% extends 'layout/base.html' %}
 
-{% block content %}
-<h1>Home</h1>
+{% block css %}
+<style>
+    /* Custom CSS styles */
+    .hero {
+        background-color: #f8f9fa; /* Light gray background color */
+        padding: 100px 0; /* Add padding top and bottom */
+        text-align: center; /* Center align text */
+    }
+
+    .hero h1 {
+        color: #343a40; /* Dark text color */
+        font-size: 3.5rem; /* Larger font size */
+        margin-bottom: 20px; /* Add space below the heading */
+    }
+
+    .hero p {
+        color: #6c757d; /* Medium gray text color */
+        font-size: 1.5rem; /* Medium font size */
+    }
+
+    /* Footer CSS */
+    .footer {
+        background-color: #343a40; /* Dark background color */
+        color: #ffffff; /* White text color */
+        padding: 10px 0; /* Add padding top and bottom */
+        text-align: center; /* Center align text */
+        position: fixed; /* Fixed positioning */
+        bottom: 0; /* Stick to the bottom */
+        width: 100%; /* Full width */
+        z-index: 100; /* Ensure it stays on top of other content */
+    }
+</style>
 {% endblock %}
 
+{% block content %}
+<div class="hero">
+    <div class="container">
+        <h1>Welcome to our Motion World</h1>
+        <p>Explore what we have to offer.</p>
+    </div>
+</div>
+{% endblock %}
 
-
+{% block footer %}
+<footer class="footer">
+    <div class="container">
+        <span>© @Motion World</span>
+    </div>
+</footer>
+{% endblock %}

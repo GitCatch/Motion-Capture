@@ -1,0 +1,157 @@
+{% extends 'layout/base.html' %}
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MotionTrack Hub</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f9fa;
+            color: #333;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            text-align: center;
+        }
+        .hero {
+            background-image: url('static/uploads/wall-8265556.jpg');
+            background-size: cover;
+            background-position: center;
+            height: 80vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            align-items: center;
+            text-align: center;
+            position: relative;
+            color: white;
+        }
+
+        .hero h1 {
+            font-size: 3em;
+            margin-bottom: 10px;
+        }
+        .hero p {
+            font-size: 1.5em;
+            margin-bottom: 20px;
+        }
+        .button {
+            background-color: #007bff;
+            border: none;
+            color: white;
+            padding: 15px 30px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 1.2em;
+            margin: 10px;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+            cursor: pointer;
+        }
+        .button:hover {
+            background-color: #0056b3;
+        }
+        .features-container {
+            background-image: url('static/uploads/dare-7923106.jpg'); /* Add your features background image URL */
+            background-size: cover;
+            background-position: center;
+            padding: 80px 0; /* Adjust as needed */
+            margin-top: 20px;
+            border-radius: 10px; /* Add border-radius for rounded corners */
+            text-align: center;
+        }
+        .features {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .feature {
+            flex: 1;
+            max-width: 300px;
+            padding: 20px;
+            margin: 20px;
+            background-color: rgba(255, 255, 255, 0.8); /* Background color for features */
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            text-align: center;
+            transition: transform 0.3s;
+            position: relative;
+        }
+        .feature:hover {
+            transform: translateY(-5px);
+        }
+        .feature h2 {
+            font-size: 1.5em;
+            margin-bottom: 10px;
+            color: #007bff; /* Color for feature headings */
+        }
+        .feature p {
+            font-size: 1.1em;
+            color: #666;
+        }
+        .footer {
+            background-color: #333;
+            color: #fff;
+            padding: .5px 0;
+            text-align: center;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            z-index: 100;
+        }
+    </style>
+</head>
+<body>
+    
+    <div class="hero">
+        <div class="container">
+            <h1>Welcome to MotionTrack Hub</h1>
+            <p>Explore the power of Computer Vision in Motion Detection.</p>
+            <!-- Create button with Unicode character -->
+            <a href="#" class="button">&#43; Create</a>
+            <!-- Upload button with Unicode character -->
+            <a href="#" class="button">&#8682; Upload</a>
+        </div>
+    </div>
+
+<div class="features-container">
+    <div class="container">
+        <h2>Features</h2>
+        <div class="features">
+            <div class="feature">
+                <h2>Real-time Detection</h2>
+                <p>Experience real-time motion detection using advanced Computer Vision algorithms.</p>
+            </div>
+            <div class="feature">
+                <h2>Flexible Configuration</h2>
+                <p>Customize and configure motion detection parameters to suit your specific needs.</p>
+            </div>
+            <div class="feature">
+                <h2>Alert Notifications</h2>
+                <p>Receive instant alerts and notifications when motion is detected.</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="footer">
+    <p>&copy; 2024 Motion Detection Dashboard. All rights reserved.</p>
+</div>
+
+</body>
+</html>
+{% endblock %}
+
+
+
