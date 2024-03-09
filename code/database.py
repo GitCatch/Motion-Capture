@@ -27,15 +27,29 @@ class File(Base):
     
     def __str__(self):
         return self.path
+    
+class Project(Base):
+    __tablename__ = 'project'
+    id = Column(Integer, primary_key=True)
+    name = Column(String(255), nullable=False)
+    desc = Column(String(255), nullable=False)
+    user_id = Column(Integer, ForeignKey('users.id'))
+    created_at = Column(DateTime, default=datetime.now)
+    
+    def __str__(self):
+        return self.path
+    
+    
+
 
 
 #more classes for other tables
 
 #Utility Functions
 def open_db():
-  engine = create_engine('sqlite:///project.db', echo=True)
-  session = sessionmaker(bind=engine)
-  return session()
+    engine = create_engine('sqlite:///project.db', echo=True)
+    session = sessionmaker(bind=engine)
+    return session()
 
 def add_to_db(object):
     db = open_db()
@@ -43,8 +57,12 @@ def add_to_db(object):
     db.commit()
     db.close()
 
+    
+
 
 if __name__ == "__main__":
     #Create Engine
     engine = create_engine('sqlite:///project.db', echo=True)
     Base.metadata.create_all(engine)
+
+    

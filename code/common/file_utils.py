@@ -5,6 +5,7 @@ mime_types = {
     'csv': 'text/csv',
     'json': 'application/json',
     'xlsx': 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet',
+    'mp4': 'video/mp4',
 }
 
 def get_mime_type(file_path):
