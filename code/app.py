@@ -68,7 +68,7 @@ def file_upload():
     if not session.get('isauth'):
         return redirect('/login')
     if request.method == 'POST':
-        file = request.files['file']
+        file = request.files['file'] 
         name = secure_filename(file.filename)
         path = upload_file(file, name)
         file = File(path=path, user_id=session['id'])

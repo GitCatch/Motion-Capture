@@ -18,15 +18,6 @@ class User(Base):
     def __str__(self):
         return self.username
     
-class File(Base):
-    __tablename__ = 'files'
-    id = Column(Integer, primary_key=True)
-    path = Column(String(255), nullable=False)
-    user_id = Column(Integer, ForeignKey('users.id'))
-    created_at = Column(DateTime, default=datetime.now)
-    
-    def __str__(self):
-        return self.path
     
 class Project(Base):
     __tablename__ = 'project'
@@ -40,6 +31,17 @@ class Project(Base):
         return self.path
     
     
+class File(Base):
+    __tablename__ = 'files'
+
+    id = Column(Integer, primary_key=True)
+    path = Column(String(255), nullable=False)
+    project_id = Column(Integer, ForeignKey('project.id'))
+    user_id = Column(Integer, ForeignKey('users.id'))
+    created_at = Column(DateTime, default=datetime.now)
+    
+    def __str__(self):
+        return self.path
 
 
 
